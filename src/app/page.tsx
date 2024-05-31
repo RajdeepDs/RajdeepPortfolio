@@ -4,10 +4,11 @@ import Link from "next/link";
 import { projects } from "@/configs/projects";
 import { contacts } from "@/configs/contacts";
 import { skills } from "@/configs/skills";
-import { getAllBlogsMeta } from "@/utils/mdx";
+import { getBlogPosts } from "@/utils/mdx";
+import { formatDate } from "@/utils/date";
 
 export default async function Home() {
-  const blogs = await getAllBlogsMeta();
+  const blogs = await getBlogPosts();
   return (
     <main className="grid grid-cols-2 p-10">
       <aside>
@@ -73,10 +74,12 @@ export default async function Home() {
               <Link
                 href={"/blogs/" + blog.slug}
                 key={blog.slug}
-                className="flex py-2 justify-between border-b"
+                className="flex py-2 justify-between border-b hover:bg-gray-50 transition-colors duration-300 ease-in-out"
               >
-                <h2 className="text-sm">{blog.title}</h2>
-                <p className="text-sm text-gray-400">{blog.date}</p>
+                <h2 className="text-sm">{blog.metadata.title}</h2>
+                <p className="text-sm text-gray-400">
+                  {formatDate(blog.metadata.publishedAt)}
+                </p>
               </Link>
             ))}
             <Link href={"/blogs"}>

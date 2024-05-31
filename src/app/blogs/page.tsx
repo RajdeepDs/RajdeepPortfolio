@@ -1,9 +1,9 @@
 import { formatDate } from "@/utils/date";
-import { getAllBlogsMeta } from "@/utils/mdx";
+import { getBlogPosts } from "@/utils/mdx";
 import Link from "next/link";
 
 export default async function Blogs() {
-  const blogs = await getAllBlogsMeta();
+  const blogs = await getBlogPosts();
   return (
     <main className="p-10">
       <Link
@@ -22,9 +22,9 @@ export default async function Blogs() {
             key={blog.slug}
             className="flex py-2 justify-between border-b cursor-pointer hover:bg-gray-50 p-2"
           >
-            <h2 className="text-sm">{blog.title}</h2>
+            <h2 className="text-sm">{blog.metadata.title}</h2>
             <p className="text-sm text-gray-400">
-              {formatDate(blog.publishedAt)}
+              {formatDate(blog.metadata.publishedAt)}
             </p>
           </Link>
         ))}
