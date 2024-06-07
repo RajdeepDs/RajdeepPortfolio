@@ -82,3 +82,113 @@ A network protocol is an established set of rules that determine how data is tra
 It is a unique address that identifies a device or internet or a local network. IP stands for 'Internet Protocol' which is a set of rules governing the format of data sent via the internet or local network.
 
 > Format: X.X.X.X [X -> 0 to 255]
+
+**Do you know how the data is transferred?** The data is transferred via the internet through Packets to individual IP Addresses.
+
+***To check your IP Address:*** 
+Open terminal and type `curl ifconfig.me -s` and press Enter.
+
+<Image
+    src={`/images/ISP.png`}
+    alt="ISP"
+    width={1800}
+    height={300}
+/>
+
+### Port Numbers
+
+A port number is the logical address of each application or process that uses a network or Internet to communicate. A port number uniquely identifies a network-based application on a computer. It is a 16-bit number.
+
+Total Port numbers are available: `2^6 = 65536`
+
+**Port numbers of some applications:**
+
+- **HTTP:** 80
+- **Mongo DB:** 27017
+- **SQL:** 1433
+
+Port Numbers from `0 - 1023` are reserved ports, `1024 - 49152` are registered for applications like MongoDB, SQL, etc. The remaining ones, we can use.
+
+### Topology
+
+Topology defines the structure of the network of how all computers or components are interconnected to each other.
+
+**Types of Topologies:**
+
+1. **Bus Topology:** Bus Topology is a network type in which every computer and network device is connected to a single cable.
+
+        **Advantages**
+
+        - If N devices are connected in a bus topology then the number of cables required to connect is 1, which is known as the backbone, 'N' droplines are required.
+
+        - The cost of the cable is less as compared to other topologies, but it is used to build small networks.
+
+        **Problems**
+
+        - If the common cable fails, then the whole system will crash down.
+
+        - Security is very low.
+
+2. **Ring Topology:** It forms a ring connecting devices with exactly two neighboring devices.
+
+        **Advantages:**
+
+        - The possibility of collisions is minimal in this type of topology.
+
+        - Cheap to install and expand.
+
+        **Problems:**
+
+        - Troubleshooting is difficult in this topology.
+
+        - The addition of stations in between or the removal of stations can disturb the whole topology.
+
+        - Less secure.
+
+3. **Star Topology:** In star topology, all the devices are connected to a single hub through a cable.
+
+        **Advantages:**
+
+        - If N devices are connected in a star topology, then the number of cables required to connect them is N, so it is easy to set up.
+
+        - Each device requires only 1 part, i.e., to connect to the hub.
+
+        **Problems:**
+
+        - The cost of installation is high.
+
+        - Performance is based on a single concentrator, i.e., hub.
+
+        - If the concentrator (hub) on which the whole topology relies fails, the whole system will crash down.
+
+4. **Tree Topology:** This topology is the variation of star topology. This topology has a hierarchical flow of data.
+
+        **Advantages:**
+
+        - It allows more devices to be attached to a single central hub thus, it decreases the distance that is traveled by the signal to come to the devices.
+
+        - It allows the network to get isolated and also prioritize from different computers.
+
+        **Problems:**
+
+        - If the central hubs get fails the entire system fails.
+
+        - The cost is high because of the cabling.
+
+5. **Mesh Topology:** In a mesh topology, every device is connected to the device via a particular channel.
+
+        **Advantages:**
+
+        - It is robust.
+
+        - The fault is diagnosed easily. Data is reliable because data is transferred among the devices through dedicated channels or links.
+
+        - Provides security and privacy.
+
+        **Problems:**
+
+        - Installation and configuration is difficult.
+
+        - The cost of cables is high as bulk wiring is required, hence suitable for less number of devices.
+
+        - The cost of maintenance is high.

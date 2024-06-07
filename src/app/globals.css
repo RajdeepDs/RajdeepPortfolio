@@ -67,13 +67,27 @@ html {
 }
 
 .prose code {
-  @apply px-1 py-0.5 rounded-lg;
+  @apply px-2 py-1 bg-gray-100 rounded-md;
 }
 
 .prose pre code {
   @apply p-0 text-black;
   border: initial;
   line-height: 1.5;
+}
+
+.prose
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::before {
+  content: "";
+}
+
+.prose
+  :where(code):not(
+    :where([class~="not-prose"], [class~="not-prose"] *)
+  )::after {
+  content: "";
 }
 
 .prose code span {
